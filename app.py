@@ -1,12 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify
 import instaloader
 
 app = Flask(__name__)
 
 
-@app.route("/instagram-profile", methods=["POST"])
-def get_instagram_profile():
-    username = request.json["username"]
+@app.route("/instagram-profile/<username>", methods=["GET"])
+def get_instagram_profile(username):
     ig = instaloader.Instaloader()
 
     try:
