@@ -31,4 +31,4 @@ def get_instagram_profile(username):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(ssl_context="adhoc")
